@@ -9,7 +9,6 @@ __pycache__/
 *$py.class
 # Data
 *.xlsx
-journal_rankings.csv
 raw_data/
 # OS
 .DS_Store
