@@ -1,0 +1,19 @@
+# Environment
+.env
+venv/
+.venv/
+env/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+# Data
+*.xlsx
+journal_rankings.csv
+raw_data/
+# OS
+.DS_Store
+# IDE
+.vscode/
+.idea/
+.gemini/
