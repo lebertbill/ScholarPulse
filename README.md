@@ -2,7 +2,7 @@
 
 **ScholarPulse** is a powerful tool designed to streamline scientific literature reviews. It automatically fetches article metadata from **Crossref** or imports from **Scopus CSV**, filters them by journal ranking (**SJR Q1-Q4**), and uses **LLMs** (Local or Remote) to verify relevance to your specific research area.
 
-![Screenshot](https://via.placeholder.com/800x400?text=ScholarPulse+Dashboard) <!-- Placeholder for a real screenshot if available -->
+![ScholarPulse Dashboard](./2d_magnets_scopus.png)
 
 ## 🌟 Key Features
 - **Dual Data Sources**: Search live via **Crossref API** or upload a **Scopus CSV** export.
@@ -17,7 +17,6 @@
 ### 1. Prerequisites
 - **Python 3.10+**
 - **Ollama** (optional, for local LLM mode)
-- **SJR Ranking File**: Place a `journal_rankings.csv` (SJR format) in the project root.
 
 ### 2. Install Dependencies
 ```bash
