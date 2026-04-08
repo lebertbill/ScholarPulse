@@ -128,11 +128,17 @@ def display_results(df, total_retrieved=None, title_suffix=""):
     st.plotly_chart(fig, use_container_width=True)
 
 # 4. Main Input Area
-col1, col2 = st.columns([1, 1])
-with col1:
-    keywords = st.text_input("🔍 Search Keywords", placeholder="e.g., 2D magnets, Perovskite cells")
-with col2:
+if data_source == "Crossref API":
+    col1, col2 = st.columns([1, 1])
+    with col1:
+        keywords = st.text_input("🔍 Search Keywords", placeholder="e.g., 2D magnets, Perovskite cells")
+    with col2:
+        search_field = st.text_area("📖 Research Area Description", placeholder="Describe your research area for AI assisted filtering", height=68)
+else:
+    # Scopus Mode: Keywords not needed for search, but field is needed for LLM
     search_field = st.text_area("📖 Research Area Description", placeholder="Describe your research area for AI assisted filtering", height=68)
+    # Internally use filename as keywords for naming saved files
+    keywords = scopus_file.name.replace(".csv", "") if scopus_file else "Scopus_Import"
 
 # 5. Processing Logic
 async def run_scholar_pulse(keywords, field, max_res, mode, model, quartiles, years, fetch_all_active, source="Crossref API", s_file=None):
