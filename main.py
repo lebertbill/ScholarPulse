@@ -57,7 +57,7 @@ async def main(keywords: str, search_field: str, max_results: int, mode: str, mo
     if final_results:
         df = pd.DataFrame(final_results)
         safe_keywords = keywords.replace(' ', '_').replace('/', '_')
-        output_file = f"results_{safe_keywords}.xlsx"
+        output_file = f"scholarpulse_{safe_keywords}.xlsx"
         df.to_excel(output_file, index=False)
         print(f"Results saved to {output_file}")
     else:
